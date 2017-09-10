@@ -1,0 +1,35 @@
+**************************************************************************************************************************
+
+java2ws -cp D:\sandbox\MultiProductService\target\classes -s D:\sandbox\MultiProductService\.cxftmp/src -d D:\sandbox\MultiProductService\.cxftmp/wsdl -classdir D:\sandbox\MultiProductService\target\classes -o productservice2.wsdl -verbose -frontend jaxws -databinding jaxb -wsdl com.biscuit.soap.product.exclusive.ProductServiceImpl
+java2ws - Apache CXF 2.6.16
+
+Feb 04, 2017 2:16:18 PM org.apache.cxf.service.factory.ReflectionServiceFactoryBean buildServiceFromClass
+INFO: Creating Service {http://exclusive.product.soap.biscuit.com/}ProductServiceImplService from class com.biscuit.soap.product.exclusive.ProductService
+
+**************************************************************************************************************************
+
+Project URL:
+
+http://localhost:8080/ProductService/services
+
+**************************************************************************************************************************
+
+WSDL:
+
+http://localhost:8080/LegacyProductService/services/ProductService/10.01?wsdl
+http://localhost:8080/LegacyProductService/services/ProductService/11.02?wsdl
+http://localhost:8080/LegacyProductService/services/ProductService/12.03?wsdl
+http://localhost:8080/LegacyProductService/services/ProductService/13.04?wsdl
+http://localhost:8080/LegacyProductService/services/ProductService/14.05?wsdl
+
+**************************************************************************************************************************
+
+EndPoints:
+
+http://localhost:8080/LegacyProductService/services/ProductService/10.01
+http://localhost:8080/LegacyProductService/services/ProductService/11.02
+http://localhost:8080/LegacyProductService/services/ProductService/12.03
+http://localhost:8080/LegacyProductService/services/ProductService/13.04
+http://localhost:8080/LegacyProductService/services/ProductService/14.05
+
+**************************************************************************************************************************

@@ -1,0 +1,321 @@
+**************************************************************************************************************************
+
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+
+D:\sandbox\Product\src>wsimport -keep http://localhost:8080/MultiProductService/services/ProductService/1.0?wsdl
+parsing WSDL...
+
+[ERROR] A class/interface with the same name "com.biscuit.soap.product.exclusive.ProductFault" is already in use. Use a class customization to resolve
+ this conflict.
+  line 139 of http://localhost:8080/MultiProductService/services/ProductService/1.0?wsdl
+
+[ERROR] (Relevant to above error) another "ProductFault" is generated from here.
+  line 57 of http://localhost:8080/MultiProductService/services/ProductService/1.0?wsdl
+
+[ERROR] Two declarations cause a collision in the ObjectFactory class.
+  line 139 of http://localhost:8080/MultiProductService/services/ProductService/1.0?wsdl
+
+[ERROR] (Related to above error) This is the other declaration.
+  line 57 of http://localhost:8080/MultiProductService/services/ProductService/1.0?wsdl
+
+Exception in thread "main" com.sun.tools.internal.ws.wscompile.AbortException
+        at com.sun.tools.internal.ws.processor.modeler.wsdl.JAXBModelBuilder.bind(JAXBModelBuilder.java:129)
+        at com.sun.tools.internal.ws.processor.modeler.wsdl.WSDLModeler.buildJAXBModel(WSDLModeler.java:2283)
+        at com.sun.tools.internal.ws.processor.modeler.wsdl.WSDLModeler.internalBuildModel(WSDLModeler.java:183)
+        at com.sun.tools.internal.ws.processor.modeler.wsdl.WSDLModeler.buildModel(WSDLModeler.java:126)
+        at com.sun.tools.internal.ws.wscompile.WsimportTool.buildWsdlModel(WsimportTool.java:429)
+        at com.sun.tools.internal.ws.wscompile.WsimportTool.run(WsimportTool.java:190)
+        at com.sun.tools.internal.ws.wscompile.WsimportTool.run(WsimportTool.java:168)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:497)
+        at com.sun.tools.internal.ws.Invoker.invoke(Invoker.java:159)
+        at com.sun.tools.internal.ws.WsImport.main(WsImport.java:42)
+
+D:\sandbox\Product\src>
+
+**************************************************************************************************************************
+
+In successful client generation:-
+
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+
+D:\sandbox\ProductClient\src>wsimport -keep http://localhost:8080/ProductService/services/ProductService/Product/5.0?wsdl
+
+parsing WSDL...
+
+Generating code...
+
+Compiling code...
+
+D:\sandbox\ProductClient\src>
+
+**************************************************************************************************************************
+
+By default :-
+
+When we will not implement. 
+
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <soap:Fault>
+         <faultcode>soap:Server</faultcode>
+         <faultstring>Fault occurred while processing.</faultstring>
+      </soap:Fault>
+   </soap:Body>
+</soap:Envelope>
+
+**************************************************************************************************************************
+
+When we will implement but not added web fault.
+
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <soap:Fault>
+         <faultcode>soap:Server</faultcode>
+         <faultstring>Invalid CustomerID</faultstring>
+         <detail/>
+      </soap:Fault>
+   </soap:Body>
+</soap:Envelope>
+
+**************************************************************************************************************************
+
+After Implementing Soap Fault Exception.
+
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <soap:Fault>
+         <faultcode>soap:Server</faultcode>
+         <faultstring>My Service Error</faultstring>
+         <detail>
+            <ns2:MyServiceFault xmlns:ns2="http://ws.globinch.com/">
+               <faultCode>1234</faultCode>
+               <faultString>My Service Error</faultString>
+            </ns2:MyServiceFault>
+         </detail>
+      </soap:Fault>
+   </soap:Body>
+</soap:Envelope>
+
+**************************************************************************************************************************
+
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <soap:Fault>
+         <faultcode>soap:Server</faultcode>
+         <faultstring>Invalid CustomerID</faultstring>
+         <detail>
+            <ns2:CustomerServiceFault xmlns:ns2="http://customer.ubh.uhc.com/">
+               <errorCode>20006</errorCode>
+               <errorMessage>Invalid CustomerID</errorMessage>
+               <errorSeverity>5000</errorSeverity>
+               <system>CustomerID</system>
+            </ns2:CustomerServiceFault>
+         </detail>
+      </soap:Fault>
+   </soap:Body>
+</soap:Envelope>
+
+**************************************************************************************************************************
+
+Specific access /Envelope/Body/Fault/detail/serviceFault/messages/message/code/text()
+
+<env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+   <env:Header/>
+   <env:Body>
+      <env:Fault xmlns:fault="http://schemas.xmlsoap.org/soap/envelope/">
+         <faultcode>fault:Client</faultcode>
+         <faultstring>An error occurred. Please check the detail section. [ASPECTS: (server=espapp-dt-a5q.ula.comcast.net,service=CustomerService,version=15.09,operation=manageProduct,user=rouser,sourceSystemId=abcde,messageId=null,trackingId=abcde)]</faultstring>
+         <detail>
+            <e:serviceFault xmlns:e="http://xml.comcast.com/types">
+               <e:messages>
+                  <e:message>
+                     <e:code>CUSTOMER-31554</e:code>
+                     <e:text>Validation Error: CM_MAC value entered MATI1:74:50:76:C7 should match the regular expression ^([0-9a-fA-F][0-9a-fA-F]:){5}([0-9a-fA-F][0-9a-fA-F])$.</e:text>
+                  </e:message>
+               </e:messages>
+            </e:serviceFault>
+         </detail>
+      </env:Fault>
+   </env:Body>
+</env:Envelope>
+
+**************************************************************************************************************************
+
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <soap:Fault>
+         <faultcode>soap:Server</faultcode>
+         <faultstring>Product Id is not valid.</faultstring>
+         <detail>
+            <ns2:serviceFault xmlns:ns2="http://service.product.soap.biscuit.com/">
+               <messages>
+                  <message>
+                     <code>PRODUCT-31554</code>
+                     <text>Product Id is not valid.</text>
+                  </message>
+               </messages>
+            </ns2:serviceFault>
+         </detail>
+      </soap:Fault>
+   </soap:Body>
+</soap:Envelope>
+
+**************************************************************************************************************************
+
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <soap:Fault>
+         <faultcode>soap:Server</faultcode>
+         <faultstring>My Service Error</faultstring>
+         <detail>
+            <ns2:exceptionType xmlns:ns2="http://ws.my.com/">
+               <messages>
+                  <message>
+                     <code>1234</code>
+                     <text>My Service Error</text>
+                  </message>
+               </messages>
+            </ns2:exceptionType>
+         </detail>
+      </soap:Fault>
+   </soap:Body>
+</soap:Envelope>
+
+**************************************************************************************************************************
+
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <soap:Fault>
+         <faultcode>soap:Server</faultcode>
+         <faultstring>Product not valid.</faultstring>
+         <detail>
+            <ns2:exceptionType xmlns:ns2="http://service.product.soap.biscuit.com/">
+               <messages>
+                  <message>
+                     <code>PRODUCT-31555</code>
+                     <text>Product not valid.</text>
+                  </message>
+               </messages>
+            </ns2:exceptionType>
+         </detail>
+      </soap:Fault>
+   </soap:Body>
+</soap:Envelope>
+
+**************************************************************************************************************************
+
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <soap:Fault>
+         <faultcode>soap:Server</faultcode>
+         <faultstring>Product Id is not valid.</faultstring>
+         <detail>
+            <ns1:serviceFault xmlns:ns1="http://service.product.soap.biscuit.com/">
+               <productFaultInfo xsi:type="ns2:exceptionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns2="http://service.product.soap.biscuit.com/">
+                  <messages>
+                     <message>
+                        <code>PRODUCT-31554</code>
+                        <text>Product Id is not valid.</text>
+                     </message>
+                  </messages>
+               </productFaultInfo>
+            </ns1:serviceFault>
+         </detail>
+      </soap:Fault>
+   </soap:Body>
+</soap:Envelope>
+
+**************************************************************************************************************************
+
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <soap:Fault>
+         <faultcode>soap:Server</faultcode>
+         <faultstring>Product Id is not valid.</faultstring>
+         <detail>
+            <ns1:ProductFault xmlns:ns1="http://exclusive.product.soap.biscuit.com/">
+               <productFaultInfo xsi:type="ns2:productFault" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns2="http://exclusive.product.soap.biscuit.com/">
+                  <messages>
+                     <message>
+                        <code>PRODUCT-31554</code>
+                        <text>Product Id is not valid.</text>
+                     </message>
+                  </messages>
+               </productFaultInfo>
+            </ns1:ProductFault>
+         </detail>
+      </soap:Fault>
+   </soap:Body>
+</soap:Envelope>
+
+**************************************************************************************************************************
+
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <soap:Fault>
+         <faultcode>soap:Server</faultcode>
+         <faultstring>Product Id is not valid.</faultstring>
+         <detail>
+            <ns1:ProductServiceException xmlns:ns1="http://exclusive.product.soap.biscuit.com/">
+               <productFaultInfo xsi:type="ns2:exceptionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns2="http://exclusive.product.soap.biscuit.com/">
+                  <messages>
+                     <message>
+                        <code>PRODUCT-31554</code>
+                        <text>Product Id is not valid.</text>
+                     </message>
+                  </messages>
+               </productFaultInfo>
+            </ns1:ProductServiceException>
+         </detail>
+      </soap:Fault>
+   </soap:Body>
+</soap:Envelope>
+
+**************************************************************************************************************************
+
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <soap:Fault>
+         <faultcode>soap:Server</faultcode>
+         <faultstring>Product Id is not valid.</faultstring>
+         <detail>
+            <ns1:ProductServiceFault xmlns:ns1="http://exclusive.product.soap.biscuit.com/">
+               <productFaultInfo xsi:type="ns2:messagesType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns2="http://exclusive.product.soap.biscuit.com/">
+                  <message>
+                     <code>PRODUCT-31554</code>
+                     <text>Product Id is not valid.</text>
+                  </message>
+               </productFaultInfo>
+            </ns1:ProductServiceFault>
+         </detail>
+      </soap:Fault>
+   </soap:Body>
+</soap:Envelope>
+
+**************************************************************************************************************************
+
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <soap:Fault>
+         <faultcode>soap:Server</faultcode>
+         <faultstring>Product not inserted.</faultstring>
+         <detail>
+            <ns2:serviceFault xmlns:ns2="http://service.product.soap.biscuit.com/">
+               <messages>
+                  <message>
+                     <code>PRODUCT-31561</code>
+                     <text>Product not inserted.</text>
+                  </message>
+               </messages>
+            </ns2:serviceFault>
+         </detail>
+      </soap:Fault>
+   </soap:Body>
+</soap:Envelope>
+
+**************************************************************************************************************************

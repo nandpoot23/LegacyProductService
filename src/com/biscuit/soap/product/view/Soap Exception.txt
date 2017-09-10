@@ -1,0 +1,49 @@
+**************************************************************************************************************************
+
+Before:-
+
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <soap:Fault>
+         <faultcode>soap:Server</faultcode>
+         <faultstring>Product Id is not valid.</faultstring>
+         <detail>
+            <ns1:serviceFault xmlns:ns1="http://service.product.soap.biscuit.com/">
+               <productFaultInfo xsi:type="ns2:exceptionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns2="http://service.product.soap.biscuit.com/">
+                  <messages>
+                     <message>
+                        <code>PRODUCT-31554</code>
+                        <text>Product Id is not valid.</text>
+                     </message>
+                  </messages>
+               </productFaultInfo>
+            </ns1:serviceFault>
+         </detail>
+      </soap:Fault>
+   </soap:Body>
+</soap:Envelope>
+
+**************************************************************************************************************************
+
+After:-
+
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <soap:Fault>
+         <faultcode>soap:Server</faultcode>
+         <faultstring>Product not inserted.</faultstring>
+         <detail>
+            <ns2:serviceFault xmlns:ns2="http://service.product.soap.biscuit.com/">
+               <messages>
+                  <message>
+                     <code>PRODUCT-31561</code>
+                     <text>Product not inserted.</text>
+                  </message>
+               </messages>
+            </ns2:serviceFault>
+         </detail>
+      </soap:Fault>
+   </soap:Body>
+</soap:Envelope>
+
+**************************************************************************************************************************

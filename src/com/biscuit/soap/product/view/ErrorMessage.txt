@@ -1,0 +1,95 @@
+################################## Product Start ##################################
+
+################# Product Validation #################
+
+PRODUCT-31554 : Validation Error: Product Id is not valid.
+PRODUCT-31557 : Validation Error: Please give the valid number.
+PRODUCT-31566 : Validation Error: Product Name is not valid. 
+PRODUCT-31567 : Validation Error: Product Type is not valid. 
+PRODUCT-31568 : Validation Error: Product Valuation is not valid.
+
+#################getProductDetailByProId#################
+
+PRODUCT-31555 : DB Error: An error occurred while calling product details
+PRODUCT-31556 : System Error: Product not exist.
+
+#################getAllProductValuation#################
+
+PRODUCT-31558 : DB Error: An error occurred while calling product valuation
+PRODUCT-31559 : System Error: Product not in range.
+
+#################getProductName#################
+
+PRODUCT-31560 : DB Error: An error occurred while calling product name
+PRODUCT-31561 : System Error: Product name is not available.
+
+#################getProductType#################
+
+PRODUCT-31562 : DB Error: An error occurred while calling product type
+PRODUCT-31563 : System Error: Product type is not available.
+
+#################getProductMarketRate#################
+
+PRODUCT-31564 : DB Error: An error occurred while calling product market
+PRODUCT-31565 : System Error: Product market is not available.
+
+#################insertNewProductDetail#################
+
+PRODUCT-31569 : DB Error: An error occurred while inserting new product
+PRODUCT-31570 : System Error: An error occurred while inserting new product
+
+#################updateProductMarketValue#################
+
+PRODUCT-31571 : DB Error: An error occurred while updating product
+PRODUCT-31572 : System Error: An error occurred while updating product
+
+#################deleteProductFromCurrent#################
+
+PRODUCT-31573 : DB Error: An error occurred while deleting product
+PRODUCT-31574 : System Error: Product already deleted.
+
+################################## Product End ####################################
+
+################################## Biscuit Start ##################################
+
+################# Biscuit Validation #################
+
+BISCUIT-51554 : Validation Error: Biscuit Id is not valid.
+BISCUIT-51557 : Validation Error: Please give proper biscuit name.
+BISCUIT-51562 : Validation Error: Please give correct season name.
+BISCUIT-51565 : Validation Error: Please give proper biscuit name.
+BISCUIT-51568 : Validation Error: Biscuit Name is not valid.
+BISCUIT-51569 : Validation Error: Biscuit Type is not valid.
+BISCUIT-51570 : Validation Error: Biscuit Stock with Brand is not valid.
+
+#################getBiscuitDetailsById###################
+
+BISCUIT-51555 : DB Error: An error occurred while getting biscuit
+BISCUIT-51556 : System Error: Biscuit is not available.
+
+#################getBiscuitByBrandType###################
+
+BISCUIT-51558 : DB Error: An error occurred while getting biscuit name
+BISCUIT-51559 : System Error: Biscuit name is not valid.
+
+#################getBiscuitByStock###################
+
+BISCUIT-51560 : DB Error: An error occurred while getting biscuit stock
+BISCUIT-51561 : System Error: Biscuit stock is not available.
+
+#################getAllBrandBiscuitTypeBySeason###################
+
+BISCUIT-51563 : DB Error: An error occurred while getting biscuit brand
+BISCUIT-51564 : System Error: Season not found.
+
+#################getAllBrandEverGreenBiscuit###################
+
+BISCUIT-51566 : DB Error: An error occurred while getting evergreen biscuit
+BISCUIT-51567 : System Error: Evergreen Biscuit is not available.
+
+#################insertNewBrandBiscuit###################
+
+BISCUIT-51571 : DB Error: An error occurred while inserting new biscuit
+BISCUIT-51572 : System Error: An error occurred while inserting new biscuit
+
+################################## Biscuit End ##################################

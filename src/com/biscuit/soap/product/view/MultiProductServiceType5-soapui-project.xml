@@ -1,0 +1,1418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="ba268d8d-34fc-4869-bc51-76fc55b1cebd" activeEnvironment="Default" name="MultiProductServiceType5" resourceRoot="" soapui-version="5.2.1" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="bdb69420-bffd-4fc9-a78f-8331f88f9fbf" wsaVersion="NONE" name="ProductServiceImplServiceSoapBinding" type="wsdl" bindingName="{http://service.product.soap.biscuit.com/}ProductServiceImplServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/LegacyProductService/services/ProductService/14.05?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/LegacyProductService/services/ProductService/14.05?wsdl"><con:part><con:url>http://localhost:8080/LegacyProductService/services/ProductService/14.05?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="ProductServiceImplService" targetNamespace="http://service.product.soap.biscuit.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://service.product.soap.biscuit.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://service.product.soap.biscuit.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="deleteProductFromCurrent" type="tns:deleteProductFromCurrent"/>
+      <xs:element name="deleteProductFromCurrentResponse" type="tns:deleteProductFromCurrentResponse"/>
+      <xs:element name="getAllBrandBiscuitTypeBySeason" type="tns:getAllBrandBiscuitTypeBySeason"/>
+      <xs:element name="getAllBrandBiscuitTypeBySeasonResponse" type="tns:getAllBrandBiscuitTypeBySeasonResponse"/>
+      <xs:element name="getAllBrandEverGreenBiscuit" type="tns:getAllBrandEverGreenBiscuit"/>
+      <xs:element name="getAllBrandEverGreenBiscuitResponse" type="tns:getAllBrandEverGreenBiscuitResponse"/>
+      <xs:element name="getAllProductValuation" type="tns:getAllProductValuation"/>
+      <xs:element name="getAllProductValuationResponse" type="tns:getAllProductValuationResponse"/>
+      <xs:element name="getBiscuitByBrandType" type="tns:getBiscuitByBrandType"/>
+      <xs:element name="getBiscuitByBrandTypeResponse" type="tns:getBiscuitByBrandTypeResponse"/>
+      <xs:element name="getBiscuitByStock" type="tns:getBiscuitByStock"/>
+      <xs:element name="getBiscuitByStockResponse" type="tns:getBiscuitByStockResponse"/>
+      <xs:element name="getBiscuitDetailsById" type="tns:getBiscuitDetailsById"/>
+      <xs:element name="getBiscuitDetailsByIdResponse" type="tns:getBiscuitDetailsByIdResponse"/>
+      <xs:element name="getProductDetailByProId" type="tns:getProductDetailByProId"/>
+      <xs:element name="getProductDetailByProIdResponse" type="tns:getProductDetailByProIdResponse"/>
+      <xs:element name="getProductMarketRate" type="tns:getProductMarketRate"/>
+      <xs:element name="getProductMarketRateResponse" type="tns:getProductMarketRateResponse"/>
+      <xs:element name="getProductName" type="tns:getProductName"/>
+      <xs:element name="getProductNameResponse" type="tns:getProductNameResponse"/>
+      <xs:element name="getProductType" type="tns:getProductType"/>
+      <xs:element name="getProductTypeResponse" type="tns:getProductTypeResponse"/>
+      <xs:element name="insertNewBrandBiscuit" type="tns:insertNewBrandBiscuit"/>
+      <xs:element name="insertNewBrandBiscuitResponse" type="tns:insertNewBrandBiscuitResponse"/>
+      <xs:element name="insertNewProductDetail" type="tns:insertNewProductDetail"/>
+      <xs:element name="insertNewProductDetailResponse" type="tns:insertNewProductDetailResponse"/>
+      <xs:element name="updateProductMarketValue" type="tns:updateProductMarketValue"/>
+      <xs:element name="updateProductMarketValueResponse" type="tns:updateProductMarketValueResponse"/>
+      <xs:complexType name="deleteProductFromCurrent">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:productIdentity"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="productIdentity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="productId" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="deleteProductFromCurrentResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="serviceFault">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="messages" type="tns:messagesType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="messagesType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="message" nillable="true" type="tns:messageType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="messageType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="code" type="xs:string"/>
+          <xs:element minOccurs="0" name="text" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getBiscuitByStock">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:biscuitIdentity"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="biscuitIdentity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="biscuitId" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getBiscuitByStockResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:brandStock"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="brandStock">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="biscuitBrand" type="xs:string"/>
+          <xs:element minOccurs="0" name="biscuitStock" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getProductName">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:productIdentity"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getProductNameResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:productName"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="productName">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="productName" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="insertNewBrandBiscuit">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:biscuitDetails"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="biscuitDetails">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="biscuitBrandName" type="xs:string"/>
+          <xs:element name="biscuitId" type="xs:int"/>
+          <xs:element minOccurs="0" name="biscuitName" type="xs:string"/>
+          <xs:element minOccurs="0" name="biscuitStock" type="xs:string"/>
+          <xs:element minOccurs="0" name="biscuitType" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="insertNewBrandBiscuitResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="updateProductMarketValue">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:productMarket"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="productMarket">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="marketValue" type="xs:string"/>
+          <xs:element name="productId" type="xs:int"/>
+          <xs:element minOccurs="0" name="productValue" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="updateProductMarketValueResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getProductMarketRate">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:productIdentity"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getProductMarketRateResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:productMarketRate"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="productMarketRate">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="prodMarketRate" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getAllBrandEverGreenBiscuit">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:biscuitName"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="biscuitName">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="biscuitName" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getAllBrandEverGreenBiscuitResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:biscuitType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="biscuitType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="biscuitName" type="xs:string"/>
+          <xs:element minOccurs="0" name="biscuitType" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getProductType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:productIdentity"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getProductTypeResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:productType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="productType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="productType" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getAllProductValuation">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:productValue"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="productValue">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="proValuation" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getAllProductValuationResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:productValuationDetails"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="productValuationDetails">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="marketValue" type="xs:string"/>
+          <xs:element minOccurs="0" name="productName" type="xs:string"/>
+          <xs:element minOccurs="0" name="productValue" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getBiscuitByBrandType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:biscuitName"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getBiscuitByBrandTypeResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:brandName"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="brandName">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="biscuitBrand" type="xs:string"/>
+          <xs:element minOccurs="0" name="biscuitType" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="insertNewProductDetail">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:productDetails"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="productDetails">
+        <xs:sequence>
+          <xs:element name="id" type="xs:int"/>
+          <xs:element minOccurs="0" name="marketValue" type="xs:string"/>
+          <xs:element minOccurs="0" name="productName" type="xs:string"/>
+          <xs:element minOccurs="0" name="productType" type="xs:string"/>
+          <xs:element minOccurs="0" name="productValue" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="insertNewProductDetailResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getBiscuitDetailsById">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:biscuitIdentity"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getBiscuitDetailsByIdResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:biscuitDetails"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getAllBrandBiscuitTypeBySeason">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getAllBrandBiscuitTypeBySeasonResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:biscuitType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getProductDetailByProId">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:productIdentity"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getProductDetailByProIdResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:productDetails"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="serviceFault" nillable="true" type="tns:serviceFault"/>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getAllBrandEverGreenBiscuitResponse">
+    <wsdl:part element="tns:getAllBrandEverGreenBiscuitResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getProductDetailByProIdResponse">
+    <wsdl:part element="tns:getProductDetailByProIdResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteProductFromCurrent">
+    <wsdl:part element="tns:deleteProductFromCurrent" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getBiscuitByBrandTypeResponse">
+    <wsdl:part element="tns:getBiscuitByBrandTypeResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="insertNewBrandBiscuit">
+    <wsdl:part element="tns:insertNewBrandBiscuit" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllBrandEverGreenBiscuit">
+    <wsdl:part element="tns:getAllBrandEverGreenBiscuit" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getProductTypeResponse">
+    <wsdl:part element="tns:getProductTypeResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getProductType">
+    <wsdl:part element="tns:getProductType" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getBiscuitDetailsByIdResponse">
+    <wsdl:part element="tns:getBiscuitDetailsByIdResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateProductMarketValueResponse">
+    <wsdl:part element="tns:updateProductMarketValueResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllProductValuation">
+    <wsdl:part element="tns:getAllProductValuation" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="insertNewProductDetailResponse">
+    <wsdl:part element="tns:insertNewProductDetailResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getProductDetailByProId">
+    <wsdl:part element="tns:getProductDetailByProId" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getBiscuitByStockResponse">
+    <wsdl:part element="tns:getBiscuitByStockResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getBiscuitByStock">
+    <wsdl:part element="tns:getBiscuitByStock" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getProductName">
+    <wsdl:part element="tns:getProductName" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getProductMarketRateResponse">
+    <wsdl:part element="tns:getProductMarketRateResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateProductMarketValue">
+    <wsdl:part element="tns:updateProductMarketValue" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getProductMarketRate">
+    <wsdl:part element="tns:getProductMarketRate" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ProductServiceFault">
+    <wsdl:part element="tns:serviceFault" name="ProductServiceFault"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="insertNewBrandBiscuitResponse">
+    <wsdl:part element="tns:insertNewBrandBiscuitResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getProductNameResponse">
+    <wsdl:part element="tns:getProductNameResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllBrandBiscuitTypeBySeasonResponse">
+    <wsdl:part element="tns:getAllBrandBiscuitTypeBySeasonResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllProductValuationResponse">
+    <wsdl:part element="tns:getAllProductValuationResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getBiscuitByBrandType">
+    <wsdl:part element="tns:getBiscuitByBrandType" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="insertNewProductDetail">
+    <wsdl:part element="tns:insertNewProductDetail" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getBiscuitDetailsById">
+    <wsdl:part element="tns:getBiscuitDetailsById" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllBrandBiscuitTypeBySeason">
+    <wsdl:part element="tns:getAllBrandBiscuitTypeBySeason" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteProductFromCurrentResponse">
+    <wsdl:part element="tns:deleteProductFromCurrentResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ProductService">
+    <wsdl:operation name="deleteProductFromCurrent">
+      <wsdl:input message="tns:deleteProductFromCurrent" name="deleteProductFromCurrent"></wsdl:input>
+      <wsdl:output message="tns:deleteProductFromCurrentResponse" name="deleteProductFromCurrentResponse"></wsdl:output>
+      <wsdl:fault message="tns:ProductServiceFault" name="ProductServiceFault"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getBiscuitByStock">
+      <wsdl:input message="tns:getBiscuitByStock" name="getBiscuitByStock"></wsdl:input>
+      <wsdl:output message="tns:getBiscuitByStockResponse" name="getBiscuitByStockResponse"></wsdl:output>
+      <wsdl:fault message="tns:ProductServiceFault" name="ProductServiceFault"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getProductName">
+      <wsdl:input message="tns:getProductName" name="getProductName"></wsdl:input>
+      <wsdl:output message="tns:getProductNameResponse" name="getProductNameResponse"></wsdl:output>
+      <wsdl:fault message="tns:ProductServiceFault" name="ProductServiceFault"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="insertNewBrandBiscuit">
+      <wsdl:input message="tns:insertNewBrandBiscuit" name="insertNewBrandBiscuit"></wsdl:input>
+      <wsdl:output message="tns:insertNewBrandBiscuitResponse" name="insertNewBrandBiscuitResponse"></wsdl:output>
+      <wsdl:fault message="tns:ProductServiceFault" name="ProductServiceFault"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateProductMarketValue">
+      <wsdl:input message="tns:updateProductMarketValue" name="updateProductMarketValue"></wsdl:input>
+      <wsdl:output message="tns:updateProductMarketValueResponse" name="updateProductMarketValueResponse"></wsdl:output>
+      <wsdl:fault message="tns:ProductServiceFault" name="ProductServiceFault"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getProductMarketRate">
+      <wsdl:input message="tns:getProductMarketRate" name="getProductMarketRate"></wsdl:input>
+      <wsdl:output message="tns:getProductMarketRateResponse" name="getProductMarketRateResponse"></wsdl:output>
+      <wsdl:fault message="tns:ProductServiceFault" name="ProductServiceFault"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAllBrandEverGreenBiscuit">
+      <wsdl:input message="tns:getAllBrandEverGreenBiscuit" name="getAllBrandEverGreenBiscuit"></wsdl:input>
+      <wsdl:output message="tns:getAllBrandEverGreenBiscuitResponse" name="getAllBrandEverGreenBiscuitResponse"></wsdl:output>
+      <wsdl:fault message="tns:ProductServiceFault" name="ProductServiceFault"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getProductType">
+      <wsdl:input message="tns:getProductType" name="getProductType"></wsdl:input>
+      <wsdl:output message="tns:getProductTypeResponse" name="getProductTypeResponse"></wsdl:output>
+      <wsdl:fault message="tns:ProductServiceFault" name="ProductServiceFault"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAllProductValuation">
+      <wsdl:input message="tns:getAllProductValuation" name="getAllProductValuation"></wsdl:input>
+      <wsdl:output message="tns:getAllProductValuationResponse" name="getAllProductValuationResponse"></wsdl:output>
+      <wsdl:fault message="tns:ProductServiceFault" name="ProductServiceFault"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getBiscuitByBrandType">
+      <wsdl:input message="tns:getBiscuitByBrandType" name="getBiscuitByBrandType"></wsdl:input>
+      <wsdl:output message="tns:getBiscuitByBrandTypeResponse" name="getBiscuitByBrandTypeResponse"></wsdl:output>
+      <wsdl:fault message="tns:ProductServiceFault" name="ProductServiceFault"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="insertNewProductDetail">
+      <wsdl:input message="tns:insertNewProductDetail" name="insertNewProductDetail"></wsdl:input>
+      <wsdl:output message="tns:insertNewProductDetailResponse" name="insertNewProductDetailResponse"></wsdl:output>
+      <wsdl:fault message="tns:ProductServiceFault" name="ProductServiceFault"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getBiscuitDetailsById">
+      <wsdl:input message="tns:getBiscuitDetailsById" name="getBiscuitDetailsById"></wsdl:input>
+      <wsdl:output message="tns:getBiscuitDetailsByIdResponse" name="getBiscuitDetailsByIdResponse"></wsdl:output>
+      <wsdl:fault message="tns:ProductServiceFault" name="ProductServiceFault"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAllBrandBiscuitTypeBySeason">
+      <wsdl:input message="tns:getAllBrandBiscuitTypeBySeason" name="getAllBrandBiscuitTypeBySeason"></wsdl:input>
+      <wsdl:output message="tns:getAllBrandBiscuitTypeBySeasonResponse" name="getAllBrandBiscuitTypeBySeasonResponse"></wsdl:output>
+      <wsdl:fault message="tns:ProductServiceFault" name="ProductServiceFault"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getProductDetailByProId">
+      <wsdl:input message="tns:getProductDetailByProId" name="getProductDetailByProId"></wsdl:input>
+      <wsdl:output message="tns:getProductDetailByProIdResponse" name="getProductDetailByProIdResponse"></wsdl:output>
+      <wsdl:fault message="tns:ProductServiceFault" name="ProductServiceFault"></wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ProductServiceImplServiceSoapBinding" type="tns:ProductService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="deleteProductFromCurrent">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="deleteProductFromCurrent">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deleteProductFromCurrentResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ProductServiceFault">
+        <soap:fault name="ProductServiceFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getBiscuitByStock">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getBiscuitByStock">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getBiscuitByStockResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ProductServiceFault">
+        <soap:fault name="ProductServiceFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getProductName">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getProductName">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getProductNameResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ProductServiceFault">
+        <soap:fault name="ProductServiceFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="insertNewBrandBiscuit">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="insertNewBrandBiscuit">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="insertNewBrandBiscuitResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ProductServiceFault">
+        <soap:fault name="ProductServiceFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateProductMarketValue">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="updateProductMarketValue">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateProductMarketValueResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ProductServiceFault">
+        <soap:fault name="ProductServiceFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getProductMarketRate">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getProductMarketRate">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getProductMarketRateResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ProductServiceFault">
+        <soap:fault name="ProductServiceFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAllBrandEverGreenBiscuit">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getAllBrandEverGreenBiscuit">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAllBrandEverGreenBiscuitResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ProductServiceFault">
+        <soap:fault name="ProductServiceFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getProductType">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getProductType">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getProductTypeResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ProductServiceFault">
+        <soap:fault name="ProductServiceFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAllProductValuation">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getAllProductValuation">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAllProductValuationResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ProductServiceFault">
+        <soap:fault name="ProductServiceFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getBiscuitByBrandType">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getBiscuitByBrandType">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getBiscuitByBrandTypeResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ProductServiceFault">
+        <soap:fault name="ProductServiceFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="insertNewProductDetail">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="insertNewProductDetail">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="insertNewProductDetailResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ProductServiceFault">
+        <soap:fault name="ProductServiceFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getBiscuitDetailsById">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getBiscuitDetailsById">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getBiscuitDetailsByIdResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ProductServiceFault">
+        <soap:fault name="ProductServiceFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAllBrandBiscuitTypeBySeason">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getAllBrandBiscuitTypeBySeason">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAllBrandBiscuitTypeBySeasonResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ProductServiceFault">
+        <soap:fault name="ProductServiceFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getProductDetailByProId">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getProductDetailByProId">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getProductDetailByProIdResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ProductServiceFault">
+        <soap:fault name="ProductServiceFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ProductServiceImplService">
+    <wsdl:port binding="tns:ProductServiceImplServiceSoapBinding" name="ProductServiceImplPort">
+      <soap:address location="http://localhost:8080/LegacyProductService/services/ProductService/14.05"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint></con:endpoints><con:operation id="4998cd44-71bf-4447-8ebc-f54b62a90ffd" isOneWay="false" action="" name="getAllBrandBiscuitTypeBySeason" bindingOperationName="getAllBrandBiscuitTypeBySeason" type="Request-Response" outputName="getAllBrandBiscuitTypeBySeasonResponse" inputName="getAllBrandBiscuitTypeBySeason" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="2a5fd479-85da-4dab-bb4b-1c7c40972e4f" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getAllBrandBiscuitTypeBySeason>\r
+         <!--Optional:-->\r
+         <arg0>evergreen</arg0>\r
+      </ser:getAllBrandBiscuitTypeBySeason>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/getAllBrandBiscuitTypeBySeason"/><con:wsrmConfig version="1.2"/></con:call><con:call id="40e40e64-9f75-4914-b144-f4f54e74bc00" name="Request 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getAllBrandBiscuitTypeBySeason>\r
+         <!--Optional:-->\r
+         <arg0>soso</arg0>\r
+      </ser:getAllBrandBiscuitTypeBySeason>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/getAllBrandBiscuitTypeBySeason"/><con:wsrmConfig version="1.2"/></con:call><con:call id="6dd60f2a-aa09-44d6-af6f-5c5c3fdd28e3" name="Request 3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getAllBrandBiscuitTypeBySeason>\r
+         <!--Optional:-->\r
+         <arg0> </arg0>\r
+      </ser:getAllBrandBiscuitTypeBySeason>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/getAllBrandBiscuitTypeBySeason"/><con:wsrmConfig version="1.2"/></con:call><con:call id="756e6d39-5de0-4be8-a76e-17e7f32b9d5c" name="Request 4"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getAllBrandBiscuitTypeBySeason>\r
+         <!--Optional:-->\r
+         <arg0></arg0>\r
+      </ser:getAllBrandBiscuitTypeBySeason>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/getAllBrandBiscuitTypeBySeason"/><con:wsrmConfig version="1.2"/></con:call><con:call id="7ef0b284-dd74-4814-ba9b-0adfe01d8dde" name="Request 5"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getAllBrandBiscuitTypeBySeason>\r
+         <!--Optional:-->\r
+         <arg0>so so</arg0>\r
+      </ser:getAllBrandBiscuitTypeBySeason>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/getAllBrandBiscuitTypeBySeason"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="87497216-a8ef-435b-94e8-0e2b3ec27c34" isOneWay="false" action="" name="getAllBrandEverGreenBiscuit" bindingOperationName="getAllBrandEverGreenBiscuit" type="Request-Response" outputName="getAllBrandEverGreenBiscuitResponse" inputName="getAllBrandEverGreenBiscuit" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b1a25fad-0dbc-409e-b221-55039e385f19" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getAllBrandEverGreenBiscuit>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <!--Optional:-->\r
+            <biscuitName>parle</biscuitName>\r
+         </arg0>\r
+      </ser:getAllBrandEverGreenBiscuit>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/getAllBrandEverGreenBiscuit"/><con:wsrmConfig version="1.2"/></con:call><con:call id="0b55954c-8841-457e-aa8a-8a4565af14af" name="Request 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getAllBrandEverGreenBiscuit>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <!--Optional:-->\r
+            <biscuitName>parl</biscuitName>\r
+         </arg0>\r
+      </ser:getAllBrandEverGreenBiscuit>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/getAllBrandEverGreenBiscuit"/><con:wsrmConfig version="1.2"/></con:call><con:call id="62710c10-093d-4113-9f30-e862a71e2d9a" name="Request 3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getAllBrandEverGreenBiscuit>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <!--Optional:-->\r
+            <biscuitName> </biscuitName>\r
+         </arg0>\r
+      </ser:getAllBrandEverGreenBiscuit>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/getAllBrandEverGreenBiscuit"/><con:wsrmConfig version="1.2"/></con:call><con:call id="c60a00af-6016-456a-91cf-ea51bdb1b47a" name="Request 4"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getAllBrandEverGreenBiscuit>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <!--Optional:-->\r
+            <biscuitName></biscuitName>\r
+         </arg0>\r
+      </ser:getAllBrandEverGreenBiscuit>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/getAllBrandEverGreenBiscuit"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="763db25d-efe9-4998-8d17-c2928365406f" isOneWay="false" action="" name="getAllProductValuation" bindingOperationName="getAllProductValuation" type="Request-Response" outputName="getAllProductValuationResponse" inputName="getAllProductValuation" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="afd1c87a-dfd8-49d5-8a07-1e7be46ddf5a" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getAllProductValuation>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <!--Optional:-->\r
+            <proValuation>1</proValuation>\r
+         </arg0>\r
+      </ser:getAllProductValuation>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/getAllProductValuation"/><con:wsrmConfig version="1.2"/></con:call><con:call id="2d377471-f8f6-4119-806f-d56ad077a462" name="Request 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getAllProductValuation>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <!--Optional:-->\r
+            <proValuation> </proValuation>\r
+         </arg0>\r
+      </ser:getAllProductValuation>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/getAllProductValuation"/><con:wsrmConfig version="1.2"/></con:call><con:call id="a6b4bc57-8032-4ae7-848c-7ecdf94747d7" name="Request 3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getAllProductValuation>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <!--Optional:-->\r
+            <proValuation>100</proValuation>\r
+         </arg0>\r
+      </ser:getAllProductValuation>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/getAllProductValuation"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="ae5df88e-0e7e-425d-b2f4-d83699c3ed71" isOneWay="false" action="" name="getBiscuitByBrandType" bindingOperationName="getBiscuitByBrandType" type="Request-Response" outputName="getBiscuitByBrandTypeResponse" inputName="getBiscuitByBrandType" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="c854829b-3e4d-469c-b208-49994b81597e" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getBiscuitByBrandType>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <!--Optional:-->\r
+            <biscuitName>parle</biscuitName>\r
+         </arg0>\r
+      </ser:getBiscuitByBrandType>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/getBiscuitByBrandType"/><con:wsrmConfig version="1.2"/></con:call><con:call id="c61494c8-80c1-4198-9b2d-ad327b5ace43" name="Request 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getBiscuitByBrandType>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <!--Optional:-->\r
+            <biscuitName>parley</biscuitName>\r
+         </arg0>\r
+      </ser:getBiscuitByBrandType>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/getBiscuitByBrandType"/><con:wsrmConfig version="1.2"/></con:call><con:call id="5d988abe-e3ab-4c59-b6c9-260643c1b145" name="Request 3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getBiscuitByBrandType>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <!--Optional:-->\r
+            <biscuitName></biscuitName>\r
+         </arg0>\r
+      </ser:getBiscuitByBrandType>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/getBiscuitByBrandType"/><con:wsrmConfig version="1.2"/></con:call><con:call id="c55f23f8-e2e1-4901-b902-a61d5643bfbb" name="Request 4"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getBiscuitByBrandType>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <!--Optional:-->\r
+            <biscuitName> </biscuitName>\r
+         </arg0>\r
+      </ser:getBiscuitByBrandType>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/getBiscuitByBrandType"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="f6c34fd6-dd53-4c49-bcfc-78f6e37c9911" isOneWay="false" action="" name="getBiscuitByStock" bindingOperationName="getBiscuitByStock" type="Request-Response" outputName="getBiscuitByStockResponse" inputName="getBiscuitByStock" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="cf9230b7-073f-424d-b850-228751fe6da3" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getBiscuitByStock>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <biscuitId>1</biscuitId>\r
+         </arg0>\r
+      </ser:getBiscuitByStock>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/getBiscuitByStock"/><con:wsrmConfig version="1.2"/></con:call><con:call id="f522dcce-15b5-44d5-9081-0af72ffdc384" name="Request 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getBiscuitByStock>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <biscuitId>2</biscuitId>\r
+         </arg0>\r
+      </ser:getBiscuitByStock>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/getBiscuitByStock"/><con:wsrmConfig version="1.2"/></con:call><con:call id="56378125-6975-4361-b48e-78b7d57d44c8" name="Request 3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getBiscuitByStock>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <biscuitId>20</biscuitId>\r
+         </arg0>\r
+      </ser:getBiscuitByStock>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/getBiscuitByStock"/><con:wsrmConfig version="1.2"/></con:call><con:call id="25861d55-74e0-4455-89be-5a7a6e30bb9c" name="Request 4"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getBiscuitByStock>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <biscuitId>0</biscuitId>\r
+         </arg0>\r
+      </ser:getBiscuitByStock>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/getBiscuitByStock"/><con:wsrmConfig version="1.2"/></con:call><con:call id="4b9ae1c6-a400-41dd-96d3-ef7985817b55" name="Request 5"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getBiscuitByStock>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <biscuitId> </biscuitId>\r
+         </arg0>\r
+      </ser:getBiscuitByStock>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/getBiscuitByStock"/><con:wsrmConfig version="1.2"/></con:call><con:call id="419e0253-00fc-46d5-b8a0-300d9c93ea37" name="Request 6"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getBiscuitByStock>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <biscuitId>-1</biscuitId>\r
+         </arg0>\r
+      </ser:getBiscuitByStock>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/getBiscuitByStock"/><con:wsrmConfig version="1.2"/></con:call><con:call id="813050f1-915d-41ad-b113-9e25ad400979" name="Request 7"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getBiscuitByStock>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <biscuitId>1a</biscuitId>\r
+         </arg0>\r
+      </ser:getBiscuitByStock>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/getBiscuitByStock"/><con:wsrmConfig version="1.2"/></con:call><con:call id="794566c3-03f3-4550-899f-9666a6f84767" name="Request 8"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getBiscuitByStock>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <biscuitId>afdghd</biscuitId>\r
+         </arg0>\r
+      </ser:getBiscuitByStock>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/getBiscuitByStock"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="e2a3d040-1dc7-45de-a9d6-b4fa0230d37e" isOneWay="false" action="" name="getBiscuitDetailsById" bindingOperationName="getBiscuitDetailsById" type="Request-Response" outputName="getBiscuitDetailsByIdResponse" inputName="getBiscuitDetailsById" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="1d789c58-ce67-4dc8-96ad-4d07fd90e680" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getBiscuitDetailsById>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <biscuitId>1</biscuitId>\r
+         </arg0>\r
+      </ser:getBiscuitDetailsById>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/getBiscuitDetailsById"/><con:wsrmConfig version="1.2"/></con:call><con:call id="b65e87d6-fab8-47c8-88d0-525fcd177692" name="Request 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getBiscuitDetailsById>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <biscuitId>0</biscuitId>\r
+         </arg0>\r
+      </ser:getBiscuitDetailsById>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/getBiscuitDetailsById"/><con:wsrmConfig version="1.2"/></con:call><con:call id="e16a25ee-e0a7-45cc-b002-a513f39d5921" name="Request 3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getBiscuitDetailsById>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <biscuitId>-1</biscuitId>\r
+         </arg0>\r
+      </ser:getBiscuitDetailsById>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/getBiscuitDetailsById"/><con:wsrmConfig version="1.2"/></con:call><con:call id="c18ada62-c075-42df-8623-86c6d98442c6" name="Request 4"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getBiscuitDetailsById>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <biscuitId>19</biscuitId>\r
+         </arg0>\r
+      </ser:getBiscuitDetailsById>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/getBiscuitDetailsById"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="9ed1f8d7-d9ca-4168-b829-1248617d086a" isOneWay="false" action="" name="getProductDetailByProId" bindingOperationName="getProductDetailByProId" type="Request-Response" outputName="getProductDetailByProIdResponse" inputName="getProductDetailByProId" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="ae4fb997-311c-4e9a-9a6f-14e481350d4a" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getProductDetailByProId>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <productId>1</productId>\r
+         </arg0>\r
+      </ser:getProductDetailByProId>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/getProductDetailByProId"/><con:wsrmConfig version="1.2"/></con:call><con:call id="1bce9acb-d163-496a-987b-a01991f65daf" name="Request 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getProductDetailByProId>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <productId>10</productId>\r
+         </arg0>\r
+      </ser:getProductDetailByProId>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/getProductDetailByProId"/><con:wsrmConfig version="1.2"/></con:call><con:call id="10a579ba-77c0-4bf4-8efa-f812e1dba45f" name="Request 3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getProductDetailByProId>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <productId>0</productId>\r
+         </arg0>\r
+      </ser:getProductDetailByProId>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/getProductDetailByProId"/><con:wsrmConfig version="1.2"/></con:call><con:call id="9fef08a6-573f-4063-8cde-aada1f75aa48" name="Request 4"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getProductDetailByProId>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <productId>-1</productId>\r
+         </arg0>\r
+      </ser:getProductDetailByProId>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/getProductDetailByProId"/><con:wsrmConfig version="1.2"/></con:call><con:call id="c3fa8c40-7189-4e89-8938-08b35bb2717b" name="Request 5"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getProductDetailByProId>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <productId>asdf</productId>\r
+         </arg0>\r
+      </ser:getProductDetailByProId>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/getProductDetailByProId"/><con:wsrmConfig version="1.2"/></con:call><con:call id="074ce065-9370-4028-aa8a-e9d22aafb44c" name="Request 6"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getProductDetailByProId>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <productId>asdf1</productId>\r
+         </arg0>\r
+      </ser:getProductDetailByProId>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/getProductDetailByProId"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="8ce89446-4d62-47d6-a36d-0d455a53a230" isOneWay="false" action="" name="getProductMarketRate" bindingOperationName="getProductMarketRate" type="Request-Response" outputName="getProductMarketRateResponse" inputName="getProductMarketRate" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="de0b38a3-88d0-4a1a-ad7d-cfaab251f769" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getProductMarketRate>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <productId>1</productId>\r
+         </arg0>\r
+      </ser:getProductMarketRate>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/getProductMarketRate"/><con:wsrmConfig version="1.2"/></con:call><con:call id="37eb5241-6fbd-4bff-b261-0655355dc7c1" name="Request 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getProductMarketRate>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <productId>10</productId>\r
+         </arg0>\r
+      </ser:getProductMarketRate>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/getProductMarketRate"/><con:wsrmConfig version="1.2"/></con:call><con:call id="b7e8794e-19c2-4e6e-b8d3-b7133d13b3c6" name="Request 3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getProductMarketRate>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <productId>0</productId>\r
+         </arg0>\r
+      </ser:getProductMarketRate>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/getProductMarketRate"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="110450e2-bfbd-4542-af82-d24f3504c2f7" isOneWay="false" action="" name="getProductName" bindingOperationName="getProductName" type="Request-Response" outputName="getProductNameResponse" inputName="getProductName" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="3414bd8b-b9eb-4138-beb5-007b3ce56a59" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getProductName>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <productId>2</productId>\r
+         </arg0>\r
+      </ser:getProductName>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/getProductName"/><con:wsrmConfig version="1.2"/></con:call><con:call id="57bf47f1-145e-49d8-9afd-97c11fa53ebd" name="Request 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getProductName>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <productId>20</productId>\r
+         </arg0>\r
+      </ser:getProductName>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/getProductName"/><con:wsrmConfig version="1.2"/></con:call><con:call id="090db46c-abe4-4107-8ad9-bef92fa60497" name="Request 3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getProductName>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <productId>0</productId>\r
+         </arg0>\r
+      </ser:getProductName>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/getProductName"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="fbe07ade-041a-4b6a-a0cf-ec5680835a4d" isOneWay="false" action="" name="getProductType" bindingOperationName="getProductType" type="Request-Response" outputName="getProductTypeResponse" inputName="getProductType" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a709e6f7-767e-46c6-a80e-a1a5acc4889e" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getProductType>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <productId>1</productId>\r
+         </arg0>\r
+      </ser:getProductType>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/getProductType"/><con:wsrmConfig version="1.2"/></con:call><con:call id="54025f22-e5c6-4496-8cd0-0006fd317871" name="Request 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getProductType>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <productId>10</productId>\r
+         </arg0>\r
+      </ser:getProductType>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/getProductType"/><con:wsrmConfig version="1.2"/></con:call><con:call id="b8c26c96-1cb9-4d4c-86bc-4707154c9df7" name="Request 3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getProductType>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <productId>0</productId>\r
+         </arg0>\r
+      </ser:getProductType>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/getProductType"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="18db8ca0-cee1-4454-b65e-5f3aca90ccb0" isOneWay="false" action="" name="deleteProductFromCurrent" bindingOperationName="deleteProductFromCurrent" type="Request-Response" outputName="deleteProductFromCurrentResponse" inputName="deleteProductFromCurrent" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="2d0bfcd1-3333-44c3-81a1-4ce5229dd61a" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:deleteProductFromCurrent>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <productId>6</productId>\r
+         </arg0>\r
+      </ser:deleteProductFromCurrent>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/deleteProductFromCurrent"/><con:wsrmConfig version="1.2"/></con:call><con:call id="81a6be12-6d8b-4037-acf8-b3319a676e1c" name="Request 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:deleteProductFromCurrent>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <productId>7</productId>\r
+         </arg0>\r
+      </ser:deleteProductFromCurrent>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/deleteProductFromCurrent"/><con:wsrmConfig version="1.2"/></con:call><con:call id="e534c58c-a726-4121-9f17-50ca4493d766" name="Request 3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:deleteProductFromCurrent>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <productId>0</productId>\r
+         </arg0>\r
+      </ser:deleteProductFromCurrent>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/deleteProductFromCurrent"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="3cc55833-e789-4abd-a743-6096b4518ba6" isOneWay="false" action="" name="insertNewBrandBiscuit" bindingOperationName="insertNewBrandBiscuit" type="Request-Response" outputName="insertNewBrandBiscuitResponse" inputName="insertNewBrandBiscuit" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="95081f2b-4957-4d98-a4bd-dfa00db910e1" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:insertNewBrandBiscuit>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <!--Optional:-->\r
+            <biscuitBrandName>Evergreen</biscuitBrandName>\r
+            <biscuitId>19</biscuitId>\r
+            <!--Optional:-->\r
+            <biscuitName>Popins</biscuitName>\r
+            <!--Optional:-->\r
+            <biscuitStock>No</biscuitStock>\r
+            <!--Optional:-->\r
+            <biscuitType>Fruit</biscuitType>\r
+         </arg0>\r
+      </ser:insertNewBrandBiscuit>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/insertNewBrandBiscuit"/><con:wsrmConfig version="1.2"/></con:call><con:call id="46e361af-bb35-4d6b-a642-c55a10b72070" name="Request 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:insertNewBrandBiscuit>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <!--Optional:-->\r
+            <biscuitBrandName>Evergreen</biscuitBrandName>\r
+            <biscuitId>19</biscuitId>\r
+            <!--Optional:-->\r
+            <biscuitName>Popins</biscuitName>\r
+            <!--Optional:-->\r
+            <biscuitStock>No</biscuitStock>\r
+            <!--Optional:-->\r
+            <biscuitType>Fruit</biscuitType>\r
+         </arg0>\r
+      </ser:insertNewBrandBiscuit>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/insertNewBrandBiscuit"/><con:wsrmConfig version="1.2"/></con:call><con:call id="ff215cf5-97b7-46d3-bff6-8bdc70c25171" name="Request 3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:insertNewBrandBiscuit>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <!--Optional:-->\r
+            <biscuitBrandName>Evergreen</biscuitBrandName>\r
+            <biscuitId>19</biscuitId>\r
+            <!--Optional:-->\r
+            <biscuitName>Popins</biscuitName>\r
+            <!--Optional:-->\r
+            <biscuitStock>No</biscuitStock>\r
+            <!--Optional:-->\r
+            <biscuitType>Fruit</biscuitType>\r
+         </arg0>\r
+      </ser:insertNewBrandBiscuit>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/insertNewBrandBiscuit"/><con:wsrmConfig version="1.2"/></con:call><con:call id="efe0d075-c189-446f-ab4c-74009fd583f6" name="Request 4"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:insertNewBrandBiscuit>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <!--Optional:-->\r
+            <biscuitBrandName>Evergreen</biscuitBrandName>\r
+            <biscuitId>0</biscuitId>\r
+            <!--Optional:-->\r
+            <biscuitName>Popins</biscuitName>\r
+            <!--Optional:-->\r
+            <biscuitStock>No</biscuitStock>\r
+            <!--Optional:-->\r
+            <biscuitType>Fruit</biscuitType>\r
+         </arg0>\r
+      </ser:insertNewBrandBiscuit>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/insertNewBrandBiscuit"/><con:wsrmConfig version="1.2"/></con:call><con:call id="60307d82-3840-46f5-9949-389ca13fe5f9" name="Request 5"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:insertNewBrandBiscuit>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <!--Optional:-->\r
+            <biscuitBrandName>Evergreen</biscuitBrandName>\r
+            <biscuitId>21</biscuitId>\r
+            <!--Optional:-->\r
+            <biscuitName> </biscuitName>\r
+            <!--Optional:-->\r
+            <biscuitStock>No</biscuitStock>\r
+            <!--Optional:-->\r
+            <biscuitType>Fruit</biscuitType>\r
+         </arg0>\r
+      </ser:insertNewBrandBiscuit>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/insertNewBrandBiscuit"/><con:wsrmConfig version="1.2"/></con:call><con:call id="841a3787-8adf-4696-829b-5433c523c140" name="Request 6"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:insertNewBrandBiscuit>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <!--Optional:-->\r
+            <biscuitBrandName>Evergreen</biscuitBrandName>\r
+            <biscuitId>21</biscuitId>\r
+            <!--Optional:-->\r
+            <biscuitName>Cream</biscuitName>\r
+            <!--Optional:-->\r
+            <biscuitStock>No</biscuitStock>\r
+            <!--Optional:-->\r
+            <biscuitType></biscuitType>\r
+         </arg0>\r
+      </ser:insertNewBrandBiscuit>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/insertNewBrandBiscuit"/><con:wsrmConfig version="1.2"/></con:call><con:call id="4c484b91-dd2e-41f3-aedf-c70b04ddbd96" name="Request 7"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:insertNewBrandBiscuit>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <!--Optional:-->\r
+            <biscuitBrandName>Evergreen</biscuitBrandName>\r
+            <biscuitId>22</biscuitId>\r
+            <!--Optional:-->\r
+            <biscuitName>Cream</biscuitName>\r
+            <!--Optional:-->\r
+            <biscuitStock></biscuitStock>\r
+            <!--Optional:-->\r
+            <biscuitType>Fruit</biscuitType>\r
+         </arg0>\r
+      </ser:insertNewBrandBiscuit>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/insertNewBrandBiscuit"/><con:wsrmConfig version="1.2"/></con:call><con:call id="5b806cd7-2830-49d5-901b-061ba57a771e" name="Request 8"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:insertNewBrandBiscuit>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <!--Optional:-->\r
+            <biscuitBrandName> </biscuitBrandName>\r
+            <biscuitId>22</biscuitId>\r
+            <!--Optional:-->\r
+            <biscuitName>Cream</biscuitName>\r
+            <!--Optional:-->\r
+            <biscuitStock>Yes</biscuitStock>\r
+            <!--Optional:-->\r
+            <biscuitType>Fruit</biscuitType>\r
+         </arg0>\r
+      </ser:insertNewBrandBiscuit>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/insertNewBrandBiscuit"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="94c408cf-d15f-48ef-815d-3d7cc6848b83" isOneWay="false" action="" name="updateProductMarketValue" bindingOperationName="updateProductMarketValue" type="Request-Response" outputName="updateProductMarketValueResponse" inputName="updateProductMarketValue" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="fa2265bd-a43c-496c-befa-15e933102616" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:updateProductMarketValue>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <!--Optional:-->\r
+            <marketValue>155K</marketValue>\r
+            <!--Optional:-->\r
+            <productId>8</productId>\r
+            <!--Optional:-->\r
+            <productValue>90K</productValue>\r
+         </arg0>\r
+      </ser:updateProductMarketValue>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/updateProductMarketValue"/><con:wsrmConfig version="1.2"/></con:call><con:call id="d7182fec-5fe4-43bc-8dee-2aefef8fbf49" name="Request 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:updateProductMarketValue>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <!--Optional:-->\r
+            <marketValue>155K</marketValue>\r
+            <!--Optional:-->\r
+            <productId>60</productId>\r
+            <!--Optional:-->\r
+            <productValue>90K</productValue>\r
+         </arg0>\r
+      </ser:updateProductMarketValue>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/updateProductMarketValue"/><con:wsrmConfig version="1.2"/></con:call><con:call id="1fae0df7-97c7-4d0e-acd7-e0524b241240" name="Request 3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:updateProductMarketValue>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <!--Optional:-->\r
+            <marketValue>155K</marketValue>\r
+            <!--Optional:-->\r
+            <productId>0</productId>\r
+            <!--Optional:-->\r
+            <productValue>90K</productValue>\r
+         </arg0>\r
+      </ser:updateProductMarketValue>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/updateProductMarketValue"/><con:wsrmConfig version="1.2"/></con:call><con:call id="ae8f6d93-f5b1-4788-8dad-0e6eac4e1395" name="Request 4"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:updateProductMarketValue>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <!--Optional:-->\r
+            <marketValue>155K</marketValue>\r
+            <!--Optional:-->\r
+            <productId>8</productId>\r
+            <!--Optional:-->\r
+            <productValue> </productValue>\r
+         </arg0>\r
+      </ser:updateProductMarketValue>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/updateProductMarketValue"/><con:wsrmConfig version="1.2"/></con:call><con:call id="4407502f-51bc-4060-9c16-787028341ea0" name="Request 5"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:updateProductMarketValue>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <!--Optional:-->\r
+            <marketValue></marketValue>\r
+            <!--Optional:-->\r
+            <productId>8</productId>\r
+            <!--Optional:-->\r
+            <productValue>125K</productValue>\r
+         </arg0>\r
+      </ser:updateProductMarketValue>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/updateProductMarketValue"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="0bfca250-26e1-4267-be16-c0d9ecab7f78" isOneWay="false" action="" name="insertNewProductDetail" bindingOperationName="insertNewProductDetail" type="Request-Response" outputName="insertNewProductDetailResponse" inputName="insertNewProductDetail" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="cc1938a4-3d1a-44c6-a5e4-9a069538cac9" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:insertNewProductDetail>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <id>12</id>\r
+            <!--Optional:-->\r
+            <marketValue>90K</marketValue>\r
+            <!--Optional:-->\r
+            <productName>P6</productName>\r
+            <!--Optional:-->\r
+            <productType>T6</productType>\r
+            <!--Optional:-->\r
+            <productValue>60K</productValue>\r
+         </arg0>\r
+      </ser:insertNewProductDetail>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/insertNewProductDetail"/><con:wsrmConfig version="1.2"/></con:call><con:call id="073fb170-6ffc-4f56-8ca5-8a9eb4364a72" name="Request 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:insertNewProductDetail>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <id>7</id>\r
+            <!--Optional:-->\r
+            <marketValue>90K</marketValue>\r
+            <!--Optional:-->\r
+            <productName>P6</productName>\r
+            <!--Optional:-->\r
+            <productType>T6</productType>\r
+            <!--Optional:-->\r
+            <productValue>60K</productValue>\r
+         </arg0>\r
+      </ser:insertNewProductDetail>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/insertNewProductDetail"/><con:wsrmConfig version="1.2"/></con:call><con:call id="25786671-0089-4c29-8307-70235c6e19e6" name="Request 3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:insertNewProductDetail>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <id>0</id>\r
+            <!--Optional:-->\r
+            <marketValue>90K</marketValue>\r
+            <!--Optional:-->\r
+            <productName>P6</productName>\r
+            <!--Optional:-->\r
+            <productType>T6</productType>\r
+            <!--Optional:-->\r
+            <productValue>60K</productValue>\r
+         </arg0>\r
+      </ser:insertNewProductDetail>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/insertNewProductDetail"/><con:wsrmConfig version="1.2"/></con:call><con:call id="047ee5f1-d5f9-45e1-a49b-a67d3fe9c616" name="Request 4"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:insertNewProductDetail>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <id>9</id>\r
+            <!--Optional:-->\r
+            <marketValue>90K</marketValue>\r
+            <!--Optional:-->\r
+            <productName> </productName>\r
+            <!--Optional:-->\r
+            <productType>T6</productType>\r
+            <!--Optional:-->\r
+            <productValue>60K</productValue>\r
+         </arg0>\r
+      </ser:insertNewProductDetail>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/insertNewProductDetail"/><con:wsrmConfig version="1.2"/></con:call><con:call id="661ae5f4-d3a9-4f56-9c05-b76a468b3718" name="Request 5"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:insertNewProductDetail>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <id>9</id>\r
+            <!--Optional:-->\r
+            <marketValue>90K</marketValue>\r
+            <!--Optional:-->\r
+            <productName>P9</productName>\r
+            <!--Optional:-->\r
+            <productType></productType>\r
+            <!--Optional:-->\r
+            <productValue>60K</productValue>\r
+         </arg0>\r
+      </ser:insertNewProductDetail>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/insertNewProductDetail"/><con:wsrmConfig version="1.2"/></con:call><con:call id="5834a920-7163-4c0a-a276-f1c0d79be8fc" name="Request 6"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:insertNewProductDetail>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <id>9</id>\r
+            <!--Optional:-->\r
+            <marketValue>90K</marketValue>\r
+            <!--Optional:-->\r
+            <productName>P9</productName>\r
+            <!--Optional:-->\r
+            <productType>T9</productType>\r
+            <!--Optional:-->\r
+            <productValue></productValue>\r
+         </arg0>\r
+      </ser:insertNewProductDetail>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/insertNewProductDetail"/><con:wsrmConfig version="1.2"/></con:call><con:call id="e55daaa7-9e98-4664-aaf5-d181d5cbbeef" name="Request 7"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/LegacyProductService/services/ProductService/14.05</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:insertNewProductDetail>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <id>9</id>\r
+            <!--Optional:-->\r
+            <marketValue></marketValue>\r
+            <!--Optional:-->\r
+            <productName>P9</productName>\r
+            <!--Optional:-->\r
+            <productType>T9</productType>\r
+            <!--Optional:-->\r
+            <productValue>75K</productValue>\r
+         </arg0>\r
+      </ser:insertNewProductDetail>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.product.soap.biscuit.com/ProductService/insertNewProductDetail"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>

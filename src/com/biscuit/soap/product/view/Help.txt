@@ -1,0 +1,13 @@
+************************************************************************************************************************
+
+Spring JDBC Template:-
+
+http://stackoverflow.com/questions/11843658/update-a-row-using-spring-jdbctemplate
+https://examples.javacodegeeks.com/enterprise-java/spring/jdbc/update-records-in-database-with-jdbctemplate/
+http://www.codejava.net/frameworks/spring/spring-jdbc-template-simple-example
+http://www.java4s.com/spring/spring-jdbctemplate-update-insert-query-example/
+https://kodejava.org/how-do-i-update-records-in-the-database-using-jdbctemplate/
+http://java-demos.blogspot.in/2014/04/spring-jdbctemplate-example-to-insert.html
+http://www.technicalkeeda.com/spring-tutorials/spring-jdbc-template-batch-update-example
+
+************************************************************************************************************************

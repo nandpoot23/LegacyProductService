@@ -1,0 +1,30 @@
+**************************************************************************************************************************
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.product.soap.biscuit.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:getBiscuitByStock>
+         <!--Optional:-->
+         <arg0>
+            <biscuitId>2</biscuitId>
+         </arg0>
+      </ser:getBiscuitByStock>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+End point : 5.0, 4.0
+
+**************************************************************************************************************************
+
+if we hit to 3.0 then below response :-
+
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <soap:Fault>
+         <faultcode>soap:Client</faultcode>
+         <faultstring>Message part {http://service.product.soap.biscuit.com/}getBiscuitByStock was not recognized.  (Does it exist in service WSDL?)</faultstring>
+      </soap:Fault>
+   </soap:Body>
+</soap:Envelope>
+
+**************************************************************************************************************************
